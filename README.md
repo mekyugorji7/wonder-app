@@ -2,7 +2,7 @@
 
 <img width="1496" height="860" alt="wonder-ss" src="https://github.com/user-attachments/assets/f1cc193d-1c6e-425a-a03e-8896ed0d509a" />
 
-Wonder is an agentic workspace for all business content. It helps buisnesses create websites, social media, and print materials. This repository contains its React-based landing page and product experience. (WIP)
+Wonder is an agentic creative workspace for all your business content. It helps businesses create websites, social media, and print materials. This repository contains its React-based landing page and product experience. (WIP)
 
 Built with Vite, React, TypeScript, Tailwind CSS, Motion, Iconoir, and shadcn-style UI components.
 
