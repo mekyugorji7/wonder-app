@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { LandingPage } from "@/pages/LandingPage";
+import { AppWorkspace } from "@/pages/AppWorkspace";
+import { OnboardingGuard } from "@/components/dashboard/OnboardingGuard";
+import { OnboardingPage } from "@/pages/OnboardingPage";
+import { DashboardPage } from "@/pages/DashboardPage";
+import { BusinessPage } from "@/pages/BusinessPage";
+import { ProjectPage } from "@/pages/ProjectPage";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/app" element={<AppWorkspace />}>
+        <Route element={<OnboardingGuard />}>
+          <Route path="onboarding" element={<OnboardingPage mode="initial" />} />
+          <Route path="onboarding/add" element={<OnboardingPage mode="add" />} />
+          <Route path="project/:projectId" element={<ProjectPage />} />
+          <Route path="business" element={<BusinessPage />} />
+          <Route index element={<DashboardPage />} />
+          <Route path=":section" element={<DashboardPage />} />
+        </Route>
+      </Route>
+    </Routes>
   );
 }
-
-export default App;
